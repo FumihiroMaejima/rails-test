@@ -1,12 +1,11 @@
 # FROM ruby:2.6.5-alpine3.11
 FROM ruby:3.2.2-alpine3.18
 
-
-ENV ROOT="/myapp"
+ENV WORKDIR="/var/www/html"
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 
-WORKDIR ${ROOT}
+WORKDIR ${WORKDIR}
 
 RUN apk update && \
     apk upgrade && \
@@ -26,13 +25,13 @@ RUN apk update && \
         build-base \
         curl-dev
 
-COPY Gemfile ${ROOT}
-COPY Gemfile.lock ${ROOT}
+COPY ./backend/Gemfile ${WORKDIR}
+COPY ./backend/Gemfile.lock ${WORKDIR}
 
 RUN bundle install
 RUN apk del build-packs
 
-COPY . ${ROOT}
+COPY ./backend ${WORKDIR}
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
