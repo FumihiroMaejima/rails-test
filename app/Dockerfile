@@ -17,6 +17,7 @@ RUN apk update && \
         linux-headers \
         make \
         nodejs \
+        gcompat \
         mysql-client \
         mysql-dev \
         # postgresql \
