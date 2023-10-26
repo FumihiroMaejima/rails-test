@@ -81,6 +81,9 @@ docker-compose run app ash -c 'cd /var/www/html && rails new . -fT -d mysql'
 docker-compose run app ash -c 'cd /var/www/html && bundle binstubs bundler'
 docker-compose run app ash -c 'cd /var/www/html && rails webpacker:install'
 
+### Could not find mysql2...等のエラーが出たら下記のコマンドを実行する。
+docker-compose run app ash -c 'cd /var/www/html && bundle install'
+
 ```
 
 
