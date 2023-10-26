@@ -17,8 +17,10 @@ RUN apk update && \
         linux-headers \
         make \
         nodejs \
-        postgresql \
-        postgresql-dev \
+        mysql-client \
+        mysql-dev \
+        # postgresql \
+        # postgresql-dev \
         tzdata \
         yarn && \
     apk add --virtual build-packs --no-cache \
