@@ -94,18 +94,32 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: ${USER_PASSWORD}
-  host: ${DOCKER_SEVICE_NAME}
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
 
 development:
   <<: *default
-  database: ${DATABASE_NAME}
+  database: <%= ENV['DATABASE_NAME'] %>
 
 test:
   <<: *default
-  database: ${DATABASE_NAME}
+  database: <%= ENV['DATABASE_NAME'] %>
 ```
 
+### 環境変数の設定
+
+`Gemfile`に下記の設定を追記する。
+
+```Gemfile
+# For .env
+gem 'dotenv-rails'
+```
+
+プロジェクト直下に`.env`ファイルの作成
+
+```shell
+touch .env
+```
 
 ---
 
