@@ -86,6 +86,26 @@ docker-compose run app ash -c 'cd /var/www/html && bundle install'
 
 ```
 
+`config/database.yml`の設定は下記の通り行う
+
+```yaml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: ${USER_PASSWORD}
+  host: ${DOCKER_SEVICE_NAME}
+
+development:
+  <<: *default
+  database: ${DATABASE_NAME}
+
+test:
+  <<: *default
+  database: ${DATABASE_NAME}
+```
+
 
 ---
 
