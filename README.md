@@ -74,6 +74,7 @@ Could not find gem 'mysql2 (~> 0.5)' in locally installed gems.
 ### docker container 内にmysql-clientを入れた上で下記のコマンドを実行すると解消する
 docker-compose run app ash -c 'cd /var/www/html && gem install mysql2'
 
+### railsのコンテナは基本的にgemのパッケージを追加する度にイメージをビルドし直す必要がある。
 
 ### 最終的に下記の3つのコマンドを実行すればよさそう。
 docker-compose run app ash -c 'cd /var/www/html && rails new . -fT -d mysql'
