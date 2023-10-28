@@ -43,8 +43,9 @@ recreate-volume:
 	docker volume create $(VOLUME_NAME) && \
 
 dev:
-	sh ./scripts/docker/container-dev.sh && \
-	${SHELL} ./scripts/change-db-host.sh db-next db
+	sh ./scripts/docker/container-dev.sh
+#	sh ./scripts/docker/container-dev.sh && \
+#	${SHELL} ./scripts/change-db-host.sh db-next db
 
 # ssr:
 # 	sh ./scripts/docker/container-nextjs.sh && \
