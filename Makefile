@@ -189,6 +189,18 @@ init-dev-db-setting: # DB initialization & Partition Setting
 	docker-compose exec app php artisan admins:add-users-partitions
 
 ##############################
+# Ruby on Rails
+##############################
+bundle-install:
+	docker-compose run app ash -c 'bundle install'
+
+create-rails-project:
+	docker-compose run app ash -c 'cd /var/www/html && rails new . -fT -d mysql'
+
+webpacker-install:
+	docker-compose run app ash -c 'rails webpacker:install'
+
+##############################
 # web server(nginx)
 ##############################
 nginx-t:
