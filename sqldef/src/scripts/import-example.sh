@@ -16,7 +16,7 @@ DATABASE_USER=database_user
 DATABASE_PASSWORD=database_password
 DATABASE_NAME=database_name
 OUTPUT_PATH=sqldef/src/sqls/
-OUTPUT_FILE=dump.sql # 存在するディレクトリである必要がある(scripts/databaseなど)
+OUTPUT_FILE=test_db_dump_20231028_000000.sql # 存在するディレクトリである必要がある(scripts/databaseなど)
 OUTPUT_CSV_FILE=scripts/database/dump_${TIME_STAMP}.csv
 DRY_RUN_OPTION=--dry-run
 
