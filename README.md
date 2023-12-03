@@ -126,6 +126,17 @@ touch .env
 
 ---
 
+### APIモードに途中から設定する
+
+`config/application.rb`の設定は下記を追加する。(class Application内の直下)
+
+```rb
+config.api_only = true
+```
+
+---
+
+
 ## メールサーバーについて
 
 [mailhog](https://github.com/mailhog/MailHog)を利用する。

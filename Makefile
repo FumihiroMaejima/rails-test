@@ -72,6 +72,9 @@ create-rails-project:
 webpacker-install:
 	docker-compose run app ash -c 'rails webpacker:install'
 
+rails-middleware: # middleware一覧
+	docker-compose run app ash -c 'rails middleware'
+
 ##############################
 # web server(nginx)
 ##############################
