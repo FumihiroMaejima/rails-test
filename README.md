@@ -60,6 +60,8 @@ docker network inspect ${NETWORK_NAME} | jq '.[0].Containers | .[].IPv4Address'
 
 ```shell
 docker-compose run --rm --no-deps app rails new . -fT -d mysql
+### apiモードの場合は`--api`のオプションをつける
+docker-compose run --rm --no-deps app rails new . -fT -d mysql --api
 
 ### ローカル環境でインストールを実行する為、mysqlを入れていないと下記のエラーが発生する。
 An error occurred while installing mysql2 (0.5.5), and Bundler cannot continue.
