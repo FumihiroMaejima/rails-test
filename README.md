@@ -136,6 +136,16 @@ config.api_only = true
 
 ---
 
+### Modelの作成
+
+下記のコマンドでModelを作成出来る。プロパティの指定も出来る。
+
+```shell
+rails generate model User name:string gender:string address:string
+```
+
+---
+
 
 ## メールサーバーについて
 
