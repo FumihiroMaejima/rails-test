@@ -75,6 +75,9 @@ webpacker-install:
 rails-middleware: # middleware一覧
 	docker-compose run app ash -c 'rails middleware'
 
+rails-routes: # middleware一覧
+	docker-compose run app ash -c 'rails routes'
+
 ##############################
 # web server(nginx)
 ##############################
