@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   scope '/api' do
     scope '/v1' do
         resources :users, only: [:show]
+
+        # debug
+        scope '/debug' do
+            get '/test', to: 'debug#test'
+        end
     end
   end
 end
