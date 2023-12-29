@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         # debug
         scope '/debug' do
             get '/test', to: 'users/debug#test'
+
+            get '/users/:id', to: 'users/debug#user'
         end
     end
   end
