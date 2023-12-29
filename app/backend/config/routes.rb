@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     scope '/v1' do
         resources :users, only: [:show]
 
+        # 下記は非リソースフルルート
+
         # debug
         scope '/debug' do
-            get '/test', to: 'debug#test'
+            get '/test', to: 'users/debug#test'
         end
     end
   end

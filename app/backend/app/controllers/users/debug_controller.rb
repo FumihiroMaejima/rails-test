@@ -1,4 +1,4 @@
-class DebugController < ApplicationController
+class Users::DebugController < ApplicationController
     def test
       # user = User.find(params[:id])
       render json: { ok: 'test api connection' }, status: :ok
