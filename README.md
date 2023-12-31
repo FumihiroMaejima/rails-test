@@ -60,6 +60,8 @@ docker network inspect ${NETWORK_NAME} | jq '.[0].Containers | .[].IPv4Address'
 
 ```shell
 docker-compose run --rm --no-deps app rails new . -fT -d mysql
+### apiモードの場合は`--api`のオプションをつける
+docker-compose run --rm --no-deps app rails new . -fT -d mysql --api
 
 ### ローカル環境でインストールを実行する為、mysqlを入れていないと下記のエラーが発生する。
 An error occurred while installing mysql2 (0.5.5), and Bundler cannot continue.
@@ -123,6 +125,27 @@ touch .env
 ```
 
 ---
+
+### APIモードに途中から設定する
+
+`config/application.rb`の設定は下記を追加する。(class Application内の直下)
+
+```rb
+config.api_only = true
+```
+
+---
+
+### Modelの作成
+
+下記のコマンドでModelを作成出来る。プロパティの指定も出来る。
+
+```shell
+rails generate model User name:string gender:string address:string
+```
+
+---
+
 
 ## メールサーバーについて
 
