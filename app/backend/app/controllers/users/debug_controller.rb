@@ -19,4 +19,11 @@ class Users::DebugController < ApplicationController
     rescue ActiveRecord::RecordNotFound
         render json: { error: 'Coin not found' }, status: :not_found
     end
+
+    def information
+        information = Masters::Information.find(params[:id])
+        render json: information, only: [:id, :name, :detail, :updated_at], status: :ok
+    rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Information not found' }, status: :not_found
+    end
   end
