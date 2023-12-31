@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
             get '/coins/:id', to: 'users/debug#coin'
 
+            get '/events/:id', to: 'users/debug#event'
+
             get '/informations/:id', to: 'users/debug#information'
         end
     end
