@@ -133,6 +133,12 @@ config.api_only = true
 rails generate model User name:string gender:string address:string
 ```
 
+### Rails Consoleの実行
+
+```shell
+rails console
+```
+
 ---
 
 
