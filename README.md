@@ -139,6 +139,10 @@ rails generate model User name:string gender:string address:string
 rails console
 ```
 
+### solargraph(Language Serverについて)
+
+[About solargraph](https://github.com/castwide/vscode-solargraph)
+
 ---
 
 
