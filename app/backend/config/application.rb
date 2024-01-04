@@ -35,5 +35,9 @@ module Html
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # 自動読み込みパスに下記のディレクトリを追加(/appディレクトリ内にlibraryディレクトリを追加)
+    # config.autoload_paths << Rails.root.join('app', 'libraries')
+    config.autoload_paths += Dir.glob("#{config.root}/app/libraries")
   end
 end

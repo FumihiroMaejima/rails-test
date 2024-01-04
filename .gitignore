@@ -14,3 +14,4 @@ mysql_data
 
 # debug setting file
 .vscode/launch.json
+.vscode/setting.json

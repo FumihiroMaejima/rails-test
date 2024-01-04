@@ -8,23 +8,12 @@ My Application.
 
 | 名前 | バージョン |
 | :--- | :---: |
-| PHP | 8.2(php:8.2-fpm-alpine3.17) |
+| Ruby | 3.2.2(ruby:3.2.2-alpine3.18) |
 | MySQL | 5.7 |
 | Nginx | 1.25(nginx:1.25-alpine) |
-| Laravel | 9.* |
+| Rails | 7.0.* |
 
 [backend/README](./app/backend/README.md)
-
-## frontend
-
-| 名前 | バージョン |
-| :--- | :---: |
-| npm | 8.1.0 |
-| node | 16.13.0 |
-| react | 17.0.2 |
-| TypeScript | 4.5.2 |
-
-[frontend/README](./frontend/README.md)
 
 ---
 
@@ -143,6 +132,31 @@ config.api_only = true
 ```shell
 rails generate model User name:string gender:string address:string
 ```
+
+### Rails Consoleの実行
+
+```shell
+rails console
+```
+
+### ディレクトリの追加方法
+
+名前空間の解決の為に、`/config/application.rb`に下記の設定を追加する。
+
+設定を追加すれば`/app/libraries`内直下のクラスは`ClassName::Method`で実行出来る様になる。
+
+```ruby
+  class Application < Rails::Application
+    # ...
+
+    # 自動読み込みパスに下記のディレクトリを追加(/appディレクトリ内にlibraryディレクトリを追加)
+    config.autoload_paths += Dir.glob("#{config.root}/app/libraries")
+  end
+```
+
+### solargraph(Language Serverについて)
+
+[About solargraph](https://github.com/castwide/vscode-solargraph)
 
 ---
 
