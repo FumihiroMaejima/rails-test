@@ -139,6 +139,21 @@ rails generate model User name:string gender:string address:string
 rails console
 ```
 
+### ディレクトリの追加方法
+
+名前空間の解決の為に、`/config/application.rb`に下記の設定を追加する。
+
+設定を追加すれば`/app/libraries`内直下のクラスは`ClassName::Method`で実行出来る様になる。
+
+```ruby
+  class Application < Rails::Application
+    # ...
+
+    # 自動読み込みパスに下記のディレクトリを追加(/appディレクトリ内にlibraryディレクトリを追加)
+    config.autoload_paths += Dir.glob("#{config.root}/app/libraries")
+  end
+```
+
 ### solargraph(Language Serverについて)
 
 [About solargraph](https://github.com/castwide/vscode-solargraph)
