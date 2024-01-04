@@ -78,6 +78,9 @@ rails-middleware: # middleware一覧
 rails-routes: # middleware一覧
 	docker-compose run app ash -c 'rails routes'
 
+rails-cache-clear: # frame workキャッシャ削除
+	docker-compose run app ash -c 'bundle exec rails r 'Rails.cache.clear''
+
 ##############################
 # web server(nginx)
 ##############################
