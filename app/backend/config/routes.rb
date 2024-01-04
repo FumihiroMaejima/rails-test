@@ -18,6 +18,12 @@ Rails.application.routes.draw do
             get '/events/:id', to: 'users/debug#event'
 
             get '/informations/:id', to: 'users/debug#information'
+
+            scope '/time' do
+                get '/test', to: 'debug/time#test'
+                get '/testInstance', to: 'debug/time#instanceTest'
+            end
+
         end
     end
   end
